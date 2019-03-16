@@ -1,21 +1,23 @@
 # [jQuery中文文档](https://www.jquery123.com/hover/) [菜鸟教程笔记](https://www.runoob.com/jquery/jquery-tutorial.html)
 
-## 1-1 安装。
+### 1-1 安装
 
-网页中添加： 1. 从jquery.com下载jQuery库
+#### 网页中添加： 1. 从jquery.com下载jQuery库
 
 ​				* Production version用于实际网站  * Development version测试开发 这两个版本
 
-​			2.从CDN载入jQuery。
+​			2.从CDN载入jQuery: 
 
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+```html
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"> //例如
+```
 
 ### 1-2语法。
 
-​				选取元素,对元素执行操作 
 
-``` 
-$(selector).action()
+
+``` javascript
+$(selector).action()  //选取元素,对元素执行操作 
 ```
 
   文档就绪事件：
