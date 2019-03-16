@@ -1,0 +1,10 @@
+//栗子： 通过下面三种方式 创建元素追加到文本中
+
+function appendText(){
+    var txt1="<p>text.</p>";    //使用HTML标签创建文本
+    var txt2=$("<p></p>").text("text.");  //使用jQuery创建文本
+    var txt3=document.createElement("p");  //使用DOM创建文本text whih DOM
+    txt3.innerHTML="text.";
+    $("body").append(txt1,txt2,txt3);  //追加新元素，可接受无限量
+}                          //... .after/before/prepend(t1,t2,t3);
+

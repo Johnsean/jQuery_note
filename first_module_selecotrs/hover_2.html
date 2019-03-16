@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  ul { margin-left:20px; color:blue; }
+  li { cursor:default; }
+  li.active { background:black;color:white; }
+  span { color:red; }
+  </style>
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <ul>
+    <li>Milk</li>
+    <li>White</li>
+    <li>Carrots</li>
+    <li>Orange</li>
+    <li>Broccoli</li>
+    <li>Green</li>
+  </ul>
+<script>
+$("li")
+.filter(":odd")    //过滤掉奇数 让偶数隐藏
+.hide()
+ .end()             //结束操作 返回Li对象执行往下面
+.filter(":even")    //过滤掉偶数  让奇数运行hover
+.hover(
+  function () {
+    $(this).toggleClass("active")       //点击奇数的时候  因为没有active类则添加此css效果,toggleClass:对设置或移除被选元素的一个或多个类进行切换 有则移出 无则添加 这就是切换的意思
+      .next().stop(true, true).slideToggle();     //下一个元素 即偶数 slideToggle 通过使用滑动效果（高度变化）来切换元素的可见状态。若该元素显示则隐藏，隐藏则切换显示 隐藏的需要设置callback函数才能产生变化 这里也不懂。 (stop 暂时不管 没搞懂是说ture即立即返回动画的最后结果。)
+  }
+);
+</script>
+ 
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+  
+function showHint(str)  //以下为aps/php的改编实例
+{
+  var xmlhttp;
+  if (str.length==0)
+  { 
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  }
+  if (window.XMLHttpRequest)
+  {
+    // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+    xmlhttp=new XMLHttpRequest();
+  }
+  else
+  {
+    // IE6, IE5 浏览器执行代码
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function()
+  {
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+      document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+  xmlhttp.open("GET","http://www.runoob.com/ajax/ajax-asp-php.html"+str,true);  //url为测试地址点进去粘贴代码。
+  xmlhttp.send();
+
+}
+  
+  window.onload=function(){
+  var  btn1=document.getElementById("ttt");
+  btn1.onclick=function(){
+    var t1=document.getElementById("txt1");
+    
+    showHint(t1.value);}}
+</script>
+</head>
+<body>
+
+<h3>在输入框中尝试输入字母 a:</h3>
+<form action=""> 
+输入姓名: <input type="text" id="txt1" />
+
+  </form><input type="submit" id="ttt" value="submit" />
+<p>提示信息: <span id="txtHint"></span></p> 
+
+</body>
+</html>

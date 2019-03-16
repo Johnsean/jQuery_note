@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 80px;
+        height: 80px;
+        background: #ff0000;
+        border-radius: 90px;
+      }
+      p{
+        background: yellow;
+      }
+    </style>
+    <script type=text/javascript src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js"></script>
+    </head>
+    
+    <body>
+        <button>hide</button>
+        <br />
+        <div> </div>
+        <button>淡出</button>
+        <br />
+        <div> </div>
+        <button>show</button>
+        <br />
+        <div> </div>
+        <button>上</button>
+        <br />
+        <div> </div>
+        <p> asds</p>
+        <script>
+     $(document).ready(function () {
+        $(":button").click(function (event) { //btn单击随意一个按钮隐藏
+          /* Act on the event */
+          console.log("1");
+          $("div:eq(2)").hide(3000);
+          $("p").hide(3000);
+        });
+        $(":button").dblclick(function (event) { //双击淡入
+          /* Act on the event */
+          console.log("2");
+          $("div:eq(2)").fadeIn(5000);
+        });
+        $(":button").click(function (event) { //隐藏后 又显示
+          /* Act on the event */
+          console.log("3");
+          $("div:eq(2)").show(3000);
+        });
+      });
+        </script>
+    </body>
+</html>
