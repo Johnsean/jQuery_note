@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+
+<script>
+    var xmlhttp;
+    function createXMLHTTP(){
+        if(window.XMLHttpRequest){
+            xmlhttp=new XMLHttpRequest();
+        }else{
+            xmlhttp=new ActiveXObject("Msxml2.XMLHTTP");
+        }
+    }
+    function starRequest(){
+        createXMLHTTP();
+        xmlhttp.onreadystatechange=handleState;
+        xmlhttp.open("GET","./me.json",true);
+        xmlhttp.send();
+    }
+    function handleState(){
+        if(xmlhttp.readyState==4&&xmlhttp.status==200){
+            var obj=JSON.parse(xmlhttp.responseText);
+            document.getElementById("p1").innerHTML=obj["name"];
+        }
+    }
+ 
+    starRequest();
+</script>
+</head>
+<body>
+    <div>
+        <p>展示：万维网</p>
+    </div>
+    <p id="p1"> </p>       
+</body>
+</html>
