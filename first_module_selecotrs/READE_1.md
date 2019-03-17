@@ -23,10 +23,10 @@ $(selector).action()  //选取元素,对元素执行操作
   文档就绪事件：
 
 ```javascript
-	$(document).ready(function()) {
+	$(document).ready(function(){
 
-}
-//或者 $(function()){ }
+});
+//或者 $(function(){ });
 ```
 
 
