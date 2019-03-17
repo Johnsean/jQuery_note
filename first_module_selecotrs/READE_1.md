@@ -25,7 +25,7 @@ $(selector).action()  //选取元素,对元素执行操作
 ```javascript
 	$(document).ready(function(){
 
-};
+});
 //或者 $(function(){ });
 ```
 
